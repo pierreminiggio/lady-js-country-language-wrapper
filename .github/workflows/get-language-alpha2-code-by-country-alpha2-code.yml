@@ -1,0 +1,24 @@
+on:
+  workflow_dispatch:
+    inputs:
+      titleText:
+        countryAlpha2Code: "Country alpha 2 Code"
+        required: true
+        default: "fr"
+name: Get language alpha2 code by country alpha2 code
+jobs:
+  render:
+    name: Get language alpha2 code by country alpha2 code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+      - run: sudo apt update
+      - run: npm i
+      - run: npm start getLanguageAlpha2CodeByCountryAlpha2Code $COUNTRY_ALPHA2_CODE > language_code.txt
+        env:
+          COUNTRY_ALPHA2_CODE: ${{ github.event.inputs.countryAlpha2Code }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: language_code.txt
+          path: language_code.txt

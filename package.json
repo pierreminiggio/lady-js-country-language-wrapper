@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@ladjs/country-language": "^1.0.3"
+  },
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node test.js"
+  }
+}
