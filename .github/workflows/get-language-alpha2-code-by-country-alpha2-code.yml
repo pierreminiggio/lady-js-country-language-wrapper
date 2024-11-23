@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@main
       - run: sudo apt update
       - run: npm i
-      - run: npm start getLanguageAlpha2CodeByCountryAlpha2Code $COUNTRY_ALPHA2_CODE > language_code.txt
+      - run: npm start --silent getLanguageAlpha2CodeByCountryAlpha2Code $COUNTRY_ALPHA2_CODE > language_code.txt
         env:
           COUNTRY_ALPHA2_CODE: ${{ github.event.inputs.countryAlpha2Code }}
       - uses: actions/upload-artifact@v4
