@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
     inputs:
-      titleText:
-        countryAlpha2Code: "Country alpha 2 Code"
+      countryAlpha2Code:
+        description: "Country alpha 2 Code"
         required: true
         default: "fr"
 name: Get language alpha2 code by country alpha2 code
